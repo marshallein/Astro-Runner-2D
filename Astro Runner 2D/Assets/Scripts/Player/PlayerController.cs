@@ -155,10 +155,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnBecameInvisible()
-    {
-        Die();
-    }
+    //private void OnBecameInvisible()
+    //{
+    //    Die();
+    //}
 
 
     void Die()
@@ -172,15 +172,11 @@ public class PlayerController : MonoBehaviour
         currentLives = Lives;
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "DeathZone")
-    //    {
-    //        gameManager.RestartGame();
-    //        speed = movespeedStore;
-    //        milestoneCount = speedMilestoneCountStore;
-    //        speedIncreaseMilestone = speedIncreaseMilestoneStore;
-    //        distance = 0;
-    //    }
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            Die();
+        }
+    }
 }
